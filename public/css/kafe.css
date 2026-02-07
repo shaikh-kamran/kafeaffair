@@ -1251,7 +1251,6 @@ chefs
 
 #chefs .chef-item {
   text-align: center;
-  border: 1px solid #afafaf;
   padding: 5px;
   transition: all .5s;
   border-radius: 3px;
