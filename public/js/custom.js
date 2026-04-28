@@ -2,6 +2,14 @@
 
 	"use strict";
 
+	$(document).ready(function () {
+		$("#preloader").fadeOut(600);
+	});
+
+	setTimeout(function () {
+		$("#preloader").fadeOut(600);
+	}, 3000); // 3 sec max wait
+
 	$(window).scroll(function () {
 		var scroll = $(window).scrollTop();
 		var box = $('.header-text').height();
@@ -175,24 +183,23 @@
 		});
 	}
 
-
 	// Page loading animation
-	$(window).on('load', function () {
-		if ($('.cover').length) {
-			$('.cover').parallax({
-				imageSrc: $('.cover').data('image'),
-				zIndex: '1'
-			});
-		}
+	// $(window).on('load', function () {
+	// 	if ($('.cover').length) {
+	// 		$('.cover').parallax({
+	// 			imageSrc: $('.cover').data('image'),
+	// 			zIndex: '1'
+	// 		});
+	// 	}
 
-		$("#preloader").animate({
-			'opacity': '0'
-		}, 600, function () {
-			setTimeout(function () {
-				$("#preloader").css("visibility", "hidden").fadeOut();
-			}, 300);
-		});
-	});
+	// 	$("#preloader").animate({
+	// 		'opacity': '0'
+	// 	}, 600, function () {
+	// 		setTimeout(function () {
+	// 			$("#preloader").css("visibility", "hidden").fadeOut();
+	// 		}, 300);
+	// 	});
+	// });
 
 
 	// Window Resize Mobile Menu Fix
