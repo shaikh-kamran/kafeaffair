@@ -6,11 +6,17 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "cafe",
+    "coffee",
+    "daman",
+    "restaurant"
+  ],
+  "author": "Kafe Affair",
   "license": "ISC",
-  "description": "",
+  "description": "Kafe Affair - Best cafe in Daman offering quality coffee and delicious food",
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "compression": "^1.7.4"
   }
 }
