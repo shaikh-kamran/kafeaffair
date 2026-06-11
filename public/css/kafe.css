@@ -1645,9 +1645,7 @@ offers
 }
 
 #offers .tabs-content img {
-  float: left;
-  width: 100px;
-  max-width: 100px;
+  width: 100%;
   margin-right: 20px;
   border-radius: 5px;
 }
