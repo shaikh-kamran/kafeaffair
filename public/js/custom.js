@@ -4,11 +4,62 @@
 
 	$(document).ready(function () {
 		$("#preloader").fadeOut(600);
+		initParallax();
+
+		// Menu Category Filter Handler
+		$('.menu-filter-btn').on('click', function () {
+			$('.menu-filter-btn').removeClass('active');
+			$(this).addClass('active');
+
+			var filterValue = $(this).attr('data-filter');
+
+			if (filterValue === 'all') {
+				$('.menu-grid-item').stop(true, true).fadeIn(350);
+			} else {
+				$('.menu-grid-item').stop(true, true).hide();
+				$('.menu-grid-item[data-category="' + filterValue + '"]').stop(true, true).fadeIn(350);
+			}
+		});
 	});
 
 	setTimeout(function () {
 		$("#preloader").fadeOut(600);
 	}, 3000); // 3 sec max wait
+
+	// Lightweight 60fps Scroll Parallax Handler
+	function initParallax() {
+		var parallaxElements = document.querySelectorAll('[data-parallax-speed]');
+		if (!parallaxElements.length) return;
+
+		var ticking = false;
+
+		function updateParallax() {
+			var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+			parallaxElements.forEach(function (el) {
+				var speed = parseFloat(el.getAttribute('data-parallax-speed')) || 0.1;
+				var rect = el.getBoundingClientRect();
+				var elementTop = rect.top + scrollY;
+
+				// Only calculate if element is near or within viewport window
+				if (rect.top < window.innerHeight + 200 && rect.bottom > -200) {
+					var translateY = (scrollY - elementTop) * speed;
+					el.style.transform = 'translate3d(0, ' + translateY.toFixed(1) + 'px, 0)';
+				}
+			});
+
+			ticking = false;
+		}
+
+		window.addEventListener('scroll', function () {
+			if (!ticking) {
+				window.requestAnimationFrame(updateParallax);
+				ticking = true;
+			}
+		}, { passive: true });
+
+		updateParallax();
+	}
 
 	$(window).scroll(function () {
 		var scroll = $(window).scrollTop();
@@ -104,7 +155,31 @@
 				items: 5
 			}
 		}
-	})
+	});
+
+	if ($('.owl-about-carousel').length) {
+		$('.owl-about-carousel').owlCarousel({
+			items: 3,
+			loop: true,
+			dots: true,
+			nav: true,
+			autoplay: true,
+			autoplayTimeout: 3500,
+			autoplayHoverPause: true,
+			margin: 24,
+			responsive: {
+				0: {
+					items: 1
+				},
+				768: {
+					items: 2
+				},
+				992: {
+					items: 3
+				}
+			}
+		});
+	}
 
 	// Window Resize Mobile Menu Fix
 	mobileNav();
