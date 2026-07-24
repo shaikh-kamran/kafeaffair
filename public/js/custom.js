@@ -195,6 +195,13 @@
 			$(this).toggleClass('active');
 			$('.header-area .nav').slideToggle(200);
 		});
+
+		$('.header-area .nav a').on('click', function () {
+			if ($(window).width() < 992) {
+				$('.menu-trigger').removeClass('active');
+				$('.header-area .nav').slideUp(200);
+			}
+		});
 	}
 
 
@@ -205,7 +212,7 @@
 			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
 			if (target.length) {
 				var width = $(window).width();
-				if (width < 991) {
+				if (width < 992) {
 					$('.menu-trigger').removeClass('active');
 					$('.header-area .nav').slideUp(200);
 				}

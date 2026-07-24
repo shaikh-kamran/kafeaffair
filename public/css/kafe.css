@@ -596,86 +596,70 @@ header
 
 .header-area .main-nav .menu-trigger {
   cursor: pointer;
-  display: block;
   position: absolute;
-  top: 33px;
+  top: 25px;
   width: 32px;
-  height: 40px;
+  height: 32px;
   text-indent: -9999em;
   z-index: 99;
-  right: 40px;
+  right: 20px;
   display: none;
 }
 
 .background-header .main-nav .menu-trigger {
-  top: 23px;
+  top: 25px;
 }
 
 .header-area .main-nav .menu-trigger span,
 .header-area .main-nav .menu-trigger span:before,
 .header-area .main-nav .menu-trigger span:after {
-  -moz-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -webkit-transition: all 0.4s;
   transition: all 0.4s;
-  background-color: var(--theme-darkest);
+  background-color: #ffffff;
   display: block;
   position: absolute;
   width: 30px;
   height: 2px;
   left: 0;
+  border-radius: 2px;
 }
 
 .background-header .main-nav .menu-trigger span,
 .background-header .main-nav .menu-trigger span:before,
 .background-header .main-nav .menu-trigger span:after {
-  background-color: var(--theme-darkest);
+  background-color: #ffffff;
 }
 
 .header-area .main-nav .menu-trigger span:before,
 .header-area .main-nav .menu-trigger span:after {
-  -moz-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -webkit-transition: all 0.4s;
   transition: all 0.4s;
-  background-color: var(--theme-darkest);
+  background-color: #ffffff;
   display: block;
   position: absolute;
   width: 30px;
   height: 2px;
   left: 0;
-  width: 75%;
+  width: 100%;
+  content: "";
 }
 
 .background-header .main-nav .menu-trigger span:before,
 .background-header .main-nav .menu-trigger span:after {
-  background-color: var(--theme-darkest);
-}
-
-.header-area .main-nav .menu-trigger span:before,
-.header-area .main-nav .menu-trigger span:after {
-  content: "";
+  background-color: #ffffff;
 }
 
 .header-area .main-nav .menu-trigger span {
-  top: 16px;
+  top: 14px;
 }
 
 .header-area .main-nav .menu-trigger span:before {
-  -moz-transform-origin: 33% 100%;
-  -ms-transform-origin: 33% 100%;
-  -webkit-transform-origin: 33% 100%;
   transform-origin: 33% 100%;
-  top: -10px;
+  top: -8px;
   z-index: 10;
 }
 
 .header-area .main-nav .menu-trigger span:after {
-  -moz-transform-origin: 33% 0;
-  -ms-transform-origin: 33% 0;
-  -webkit-transform-origin: 33% 0;
   transform-origin: 33% 0;
-  top: 10px;
+  top: 8px;
 }
 
 .header-area .main-nav .menu-trigger.active span,
@@ -686,27 +670,21 @@ header
 }
 
 .header-area .main-nav .menu-trigger.active span:before {
-  -moz-transform: translateY(6px) translateX(1px) rotate(45deg);
-  -ms-transform: translateY(6px) translateX(1px) rotate(45deg);
-  -webkit-transform: translateY(6px) translateX(1px) rotate(45deg);
   transform: translateY(6px) translateX(1px) rotate(45deg);
-  background-color: var(--theme-darkest);
+  background-color: var(--theme-accent);
 }
 
 .background-header .main-nav .menu-trigger.active span:before {
-  background-color: var(--theme-darkest);
+  background-color: var(--theme-accent);
 }
 
 .header-area .main-nav .menu-trigger.active span:after {
-  -moz-transform: translateY(-6px) translateX(1px) rotate(-45deg);
-  -ms-transform: translateY(-6px) translateX(1px) rotate(-45deg);
-  -webkit-transform: translateY(-6px) translateX(1px) rotate(-45deg);
   transform: translateY(-6px) translateX(1px) rotate(-45deg);
-  background-color: var(--theme-darkest);
+  background-color: var(--theme-accent);
 }
 
 .background-header .main-nav .menu-trigger.active span:after {
-  background-color: var(--theme-darkest);
+  background-color: var(--theme-accent);
 }
 
 .header-area.header-sticky {
@@ -748,11 +726,13 @@ header
   }
 
   .header-area {
-    background-color: #f7f7f7;
+    background-color: rgba(18, 18, 20, 0.95) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     padding: 0px 15px;
-    height: 100px;
-    box-shadow: none;
-    text-align: center;
+    height: 80px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .header-area .container {
@@ -760,7 +740,8 @@ header
   }
 
   .header-area .logo {
-    margin-left: 30px;
+    margin-left: 15px;
+    line-height: 80px;
   }
 
   .header-area .menu-trigger {
@@ -768,48 +749,76 @@ header
   }
 
   .header-area .main-nav {
-    overflow: hidden;
+    overflow: visible !important;
+    min-height: 80px;
   }
 
   .header-area .main-nav .nav {
     float: none;
     width: 100%;
     display: none;
-    -webkit-transition: all 0s ease 0s;
-    -moz-transition: all 0s ease 0s;
-    -o-transition: all 0s ease 0s;
-    transition: all 0s ease 0s;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: rgba(24, 24, 27, 0.98) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+    padding: 15px 20px;
+    margin-top: 0 !important;
     margin-left: 0px;
-  }
-
-  .header-area .main-nav .nav li:first-child {
-    border-top: 1px solid #eee;
-  }
-
-  .header-area.header-sticky .nav {
-    margin-top: 100px !important;
+    border-radius: 0 0 16px 16px;
+    z-index: 999;
   }
 
   .header-area .main-nav .nav li {
     width: 100%;
-    background: var(--theme-light);
-    border-bottom: 1px solid #eee;
-    padding-left: 0px !important;
-    padding-right: 0px !important;
+    background: transparent !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 4px 0 !important;
+    margin: 0 !important;
+  }
+
+  .header-area .main-nav .nav li:last-child {
+    border-bottom: none;
   }
 
   .header-area .main-nav .nav li a {
-    height: 50px !important;
-    line-height: 50px !important;
-    padding: 0px !important;
+    height: 44px !important;
+    line-height: 44px !important;
+    padding: 0 15px !important;
     border: none !important;
-    background: #f7f7f7 !important;
-    color: #191a20 !important;
+    background: transparent !important;
+    color: #ffffff !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    text-align: left;
+    border-radius: 10px;
+    display: block;
+    transition: all 0.25s ease !important;
   }
 
-  .header-area .main-nav .nav li a:hover {
-    background: #eee !important;
+  .header-area .main-nav .nav li a:hover,
+  .header-area .main-nav .nav li a.active {
+    background: rgba(240, 87, 35, 0.12) !important;
     color: var(--theme-accent) !important;
+  }
+
+  .header-area .main-nav .nav li a.nav-insta-btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
+    color: #ffffff !important;
+    padding: 10px 20px !important;
+    margin-top: 8px;
+    border-radius: 30px !important;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(220, 39, 67, 0.4);
   }
 
   .header-area .main-nav .nav li.submenu ul {
@@ -851,7 +860,7 @@ header
   }
 }
 
-@media (min-width: 767px) {
+@media (min-width: 992px) {
   .header-area .main-nav .nav {
     display: flex !important;
   }
@@ -939,6 +948,54 @@ banner
   font-size: 18px;
 }
 
+/* Instagram Button Styling */
+.insta-btn {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
+  color: #ffffff !important;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 14px 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 50px !important;
+  box-shadow: 0 8px 25px rgba(220, 39, 67, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.insta-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 32px rgba(220, 39, 67, 0.5);
+  color: #ffffff !important;
+}
+
+.insta-btn i {
+  font-size: 18px;
+}
+
+.nav-insta-btn {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
+  color: #ffffff !important;
+  padding: 8px 20px !important;
+  border-radius: 30px !important;
+  font-weight: 700 !important;
+  font-size: 13px !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3);
+}
+
+.nav-insta-btn:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 8px 22px rgba(220, 39, 67, 0.5);
+  color: #ffffff !important;
+}
+
 /* About Carousel Card Styling */
 .about-card {
   background: var(--theme-bg-card);
@@ -952,7 +1009,7 @@ banner
 .about-card:hover {
   transform: translateY(-8px);
   border-color: var(--theme-border-hover);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 20px rgba(240, 87, 35, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(240, 87, 35, 0.15);
 }
 
 .about-card .img-thumb {
@@ -1249,7 +1306,7 @@ about
 }
 
 #about .section-heading h2 {
-  padding-right: 120px;
+  padding: 20px 80px;
 }
 
 #about img {
@@ -1701,7 +1758,7 @@ reservation
 .menu-dish-card:hover {
   transform: translateY(-6px);
   border-color: var(--theme-border-hover);
-  box-shadow: 0 16px 36px rgba(0,0,0,0.5), 0 0 20px rgba(240, 87, 35, 0.15);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 20px rgba(240, 87, 35, 0.15);
 }
 
 .menu-dish-card .dish-img-container {
@@ -1732,7 +1789,7 @@ reservation
   font-size: 14px;
   padding: 4px 14px;
   border-radius: 30px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .menu-dish-card .dish-details {
@@ -1795,7 +1852,7 @@ reservation
 .contact-info-card:hover {
   border-color: rgba(240, 87, 35, 0.4);
   transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 
 .contact-info-card .icon-box {
@@ -1838,7 +1895,7 @@ reservation
   backdrop-filter: blur(20px);
   border: 1px solid var(--theme-border);
   border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
 #contact h4 {
